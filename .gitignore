@@ -5,3 +5,4 @@
 
 # archivos ignorados, no hace falta colocar ubicación,ya los encuentra automaticamente:
 db.sqlite3
+media
