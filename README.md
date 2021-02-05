@@ -4,7 +4,7 @@
 -ver las publicaciones (ya sea links,procedimientos,novedades,preguntas frecuentes)
 -dar like a un procedimiento
 
-#Que puede hacer el user staff?
+Que puede hacer el user staff?
 -todo lo anterior
 -crear,editar,eliminar ya sea un link,procedimiento(y categoria),preguntas frecuentes, y acceso al drive de novedades.
 -crear usuarios normal y staff
