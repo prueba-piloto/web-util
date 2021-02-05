@@ -1,0 +1,49 @@
+{% extends 'header.html' %}
+{% block title %}
+<title>Borrar procedimiento</title>
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/procedimientos">Procedimientos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{object.titulo}}</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content2 %}
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+{% if user.id == object.autor_id %}
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        <h3>ATENCIÓN!!</h3>
+        Si borras este procedimiento, no podras volver a recuperar su información!
+    </div>
+    <h1>Seguro deseas borrar este procedimiento?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <a href="/procedimientos" class="btn btn-primary py-2 mb-4">Volver Atras</a>
+        <button type="submit" class="btn btn-danger py-2 mb-4">Confirmar</button>        
+    </form>
+</div>
+{% endif %}
+
+{% else %}
+<h3 class="text-center py-4">No tienes los permisos suficientes</h3>
+{% endif %}
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+
+{% include "footer.html" %}
+{% endblock %}

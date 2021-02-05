@@ -1,0 +1,74 @@
+{% extends 'header.html' %}
+
+{% block title %}
+<title>Agregar Pregunta Frecuente</title>
+<style>
+    .nombre input[type=text] {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid rgb(9, 105, 122);
+        border-radius: 4px;
+        font-size: 24px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/frecuentes">Frecuentes</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Nueva Pregunta</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content2 %}
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+
+<div class="container">
+    <div class="row justify-content-center text-center">
+        <div>
+            <h1>Agregar Pregunta</h1>
+        </div>
+
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="row justify-content-center">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    <h3>Escriba un titulo:</h3>
+                    {{ form.titulo }}
+                    {% if form.errors %}
+                        <h4 class="bg-danger">Este titulo ya existe,cambie el nombre por favor!</h4>
+                    {% endif %}
+                    <span class="justify-content-center">
+                        <h3>Información:</h3>
+                        {{ form.contenido }}
+                    </span>
+                    <div class="col">
+                        <button type="submit" class="btn btn-success btn-lg btn-block mt-3 mb-3">{{view_type}}</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+{% else %}
+<h3 class="text-center py-4">No tienes los permisos suficientes</h3>
+{% endif %}
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+
+
+{% include "footer.html" %}
+{% endblock %}

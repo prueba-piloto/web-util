@@ -1,0 +1,45 @@
+{% extends 'header.html' %}
+{% block title %}
+<title>Borrar frecuente</title>
+<link rel="stylesheet" href="/static/css/loader.css">
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/frecuentes">Frecuentes</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{object.titulo}}</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content2 %}
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        <h3>ATENCIÓN!!</h3>
+        <strong>Si borras esta pregunta, se borrará su información!</strong>
+    </div>
+    <h2>Seguro deseas borrar esta pregunta?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <a href="/frecuentes" class="btn btn-primary mt-4 mb-4">Volver Atras</a>
+        <button type="submit" class="btn btn-danger mt-4 mb-4">Confirmar</button>        
+    </form>
+</div>
+
+
+{% else %}
+<h3 class="text-center py-4">No tienes los permisos suficientes</h3>
+{% endif %}
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+
+{% include "spinner.html" %}
+{% include "footer.html" %}
+{% endblock %}

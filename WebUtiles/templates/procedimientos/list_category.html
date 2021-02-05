@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/procedimientos">procedimientos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content2 %}
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+<div class="container">
+    <div class="row py-4">
+        {% for categoria in object_list %}
+
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{categoria.nombre}}</h5>
+                <a href="{% url 'up_categoria' categoria.slug %}" class="btn btn-primary">Actualizar</a>
+                <a href="{% url 'delete_categoria' categoria.slug %}" class="btn btn-danger">Borrar</a>
+            </div>
+        </div>
+
+        {% endfor %}
+        <a href="/procedimientos" class="btn btn-primary mt-4">Volver Atras</a>
+    </div>
+</div>
+
+{% else %}
+<h3 class="text-center py-4">No tienes los permisos suficientes</h3>
+{% endif %}
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+
+{% include "spinner.html" %}
+{% include "footer.html" %}
+{% endblock %}

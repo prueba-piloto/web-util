@@ -1,0 +1,18 @@
+main{
+    background: linear-gradient(#e66465, #9198e5);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+summary{
+    color: rgb(22, 124, 124);
+}
+
+.editar {
+    margin-right: 8px !important;
+}
+
+.card:hover{
+    box-shadow: #7780e9 2px 2px 12px !important;
+}

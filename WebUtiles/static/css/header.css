@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Knewave&family=VT323&display=swap');
+
+
+.navbar{
+    text-transform: uppercase;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    letter-spacing: 2px;
+    position: relative;
+    background: linear-gradient(rgba(37, 172, 160, 0.5), rgba(0,0,0,0.5));
+    text-shadow: 0px 0px 2px #47dce7;
+}
+
+#register, #logout, #login{
+    font-size: 25px !important;
+}
+
+#password{
+    letter-spacing: 0px;
+    font-size: 25px;
+    text-decoration: none;
+    margin: 4px;
+}
+
+#password:hover{
+    color: #225854 !important;    
+}
+
+.nav-item:hover{
+    text-shadow: 0px 0px 4px #b5fff9;
+}
+
+
+.sumary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary ~ * {
+    transition: 1s;
+    animation: sweep .5s ease-in-out;
+}
+@keyframes sweep {
+    0%    {opacity: 0; margin-top: -10px}
+    100%  {opacity: 1; margin-top: 0px}
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    display: none;   
+    opacity: 0.5;     
+    background-color: rgb(80, 151, 209);
+    padding: 8px;
+}

@@ -1,0 +1,53 @@
+{% extends 'header.html' %}
+
+{% block title %}
+<title>Novedades</title>
+<link rel="stylesheet" href="/static/css/loader.css">
+<style>
+    main {
+        background: linear-gradient(rgba(101, 104, 230, 0.7), rgba(145, 229, 197, 0.7));
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<li class="nav-item">
+    <a class="nav-link" href="../">Web Utiles</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="../procedimientos">Procedimientos</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="../frecuentes">Preguntas Frecuentes</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link active" href="../novedades">Novedades</a>
+</li>
+{% endblock %}
+{% block content2 %}
+{% if user.is_authenticated %}
+<main>
+    <div class="cotainer text-align justify-content-center">
+        <div class="row text-center justify-content-center">
+            <h1><i class="fab fa-google-drive"></i> Novedades <i class="fab fa-google-drive"></i><br><i
+                    class="far fa-hand-point-down py-4"></i></h1>
+            <a href="https://drive.google.com/drive/folders/1NIWrhFXvoRIwUq-wf-dPnm94XvIOSkfi?usp=sharing"
+                target="_blank">
+                <img src="/static/img/novedades.svg" alt="NOVEDADES" class="img-fluid" style="width: 400px;"></a>
+        </div>
+    </div>
+</main>
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+{% include "footer.html" %}
+{% include "spinner.html" %}
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"
+    style="display: none;opacity: 0.8;"><img src="/static/img/up.ico" class="img-fluid" alt="UP"></a>
+{% endblock %}

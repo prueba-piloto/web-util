@@ -1,0 +1,17 @@
+para creacion de posts:
+https://www.youtube.com/watch?v=s8jmlvVgTHM&ab_channel=EricelNomada
+
+para barra de busqueda:
+https://www.youtube.com/watch?v=2TseIMieHPQ&ab_channel=Developer.pe
+
+para ckeditor:
+https://www.youtube.com/watch?v=mF5jzSXb1dc&ab_channel=Codemy.com
+
+para agregar categorias:
+https://www.youtube.com/watch?v=_ph8GF84fX4&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=12&ab_channel=Codemy.com
+
+para que el usuario logeado sea el autor del posT:
+https://www.youtube.com/watch?v=TAH01Iy5AuE&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=17&ab_channel=Codemy.com
+
+para la paginacion:
+https://www.youtube.com/watch?v=ER7FJqZ84x4&list=PLMbRqrU_kvbQO1qdhuFjVKIwnvX_o7SYN&index=13

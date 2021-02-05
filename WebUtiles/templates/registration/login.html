@@ -1,0 +1,47 @@
+{% extends 'header.html' %}
+{% block title %}
+<title>Iniciar Sesion</title>
+<link rel="stylesheet" href="/static/css/loader.css">
+<link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Ir a la home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">INICIAR SESION</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block user %}
+{% endblock %}
+
+{% block content2 %}
+<div class="row" id="login">
+    <div class="col-sm-12 text-center">
+        <h2 class="text-center"> Iniciar sesión </h2>
+        {% load crispy_forms_tags %}
+        <!--Para que funcione el formulario de crispy-->
+
+        <div class="container">
+            <form method="POST">
+                {% csrf_token%}
+                {{form | crispy}}
+                <div class="text-center py-4">
+                    <button class="btn btn-success py-3" type="submit"><b>Iniciar sesión</b></button>
+                        <p>Olvidaste tu contraseña? Haz <a href="" onclick="myFunction()">click aqui!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function myFunction(){
+        alert('En construcción, hable con el admin');
+    }
+</script>
+
+{% include "spinner.html" %}
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'header.html' %}
+
+{% block title %}
+<title>{{detail.titulo}}</title>
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../procedimientos">Procedimientos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{detail.titulo}}</li>
+    </ol>
+</nav>
+{% endblock %}
+
+
+{% block content2 %}
+{% if user.is_authenticated %}
+<div class="container py-4">
+    <div class="row">
+        {% if detail %}
+        <div class="container text-center">
+            <img src="{{ detail.imagen.url }}" class="img-fluid" style="width: 300px;">
+            <h1>{{detail.titulo}}</h1>
+            <p>{{detail.contenido | safe}}</p>
+            <hr>
+            <h5>Publicado por: {{detail.autor}}</h5>
+            <p>Creado: {{detail.fecha}}<br>
+                {% if detail.update != detail.fecha %}
+                Ultima actualización: {{detail.update | timesince}} {% endif %}</p>
+        </div>
+
+        <hr>
+        <div>
+            <h4>Te gusto esta publicación? dale un like!
+                <a href="{{detail.get_like_url}}">
+                    <i class="far fa-thumbs-up"></i> {{detail.get_like_count}}
+                </a>
+            </h4>
+        </div>
+
+        {% else %}
+        <div class="text-center">
+            <h2>No hay procedimientos aquí :(</h2>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="container">
+
+    {% if user.is_staff %}
+    {% if user.id == detail.autor_id %}
+    <div class="row py-3">
+        <a href="{% url 'update' detail.slug %}" class="btn btn-lg btn-outline-success btn-block mt-4">Editar</a>
+    </div>
+
+    <div class="row py-3">
+        <a href="{% url 'delete' detail.slug %}" class="btn btn-lg btn-outline-danger btn-block mt-4">Borrar</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+{%else%}
+<div class="container justify-content-center text-center">
+    <h1>Para ver contenido por favor inicia sesión</h1>
+    <img src="../static/img/404.svg" alt="error 404 no funciona nada :/" class="img-fluid py-4" style="width: 450px;">
+</div>
+{% endif %}
+
+{% include "footer.html" %}
+{% endblock %}

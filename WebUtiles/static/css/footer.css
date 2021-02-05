@@ -1,0 +1,93 @@
+h1 {
+    font-size: calc(30px);
+    line-height: calc(10px + 10);
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+    margin: 5px;
+    font-family: "arial", cursive;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
+}
+
+@-webkit-keyframes blink {
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+    }
+}
+
+@keyframes blink {
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+    }
+}
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+}
+.pie {
+    color: rgb(255, 255, 255);
+    letter-spacing: 4px;
+    text-shadow: 0px 0px 4px rgb(135, 138, 0);
+    position: relative;
+    background: linear-gradient(rgba(37, 172, 160, 0.5), rgba(0,0,0,0.5));
+    text-shadow: 0px 0px 2px rgb(135, 138, 0);
+}
+
+.luis{
+    padding-top: 40px;
+    color: whitesmoke;
+    opacity: 50%;
+}
+
+.redes {
+    color: white;
+    opacity: 50%;
+    text-decoration: none;
+}
+
+.redes:hover {
+    color: white;
+    opacity: 100%;
+    text-decoration: none;
+}
+
+footer {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;    
+}
