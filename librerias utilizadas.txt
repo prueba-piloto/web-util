@@ -6,15 +6,15 @@ pip install django-ckeditor <-- para editor estilo word
 
 
 --------------------------------------------
-python manage.py runserver --insecure <--para que funcione los archivos staticos en debug= false
 
-superusuario:
-luis
-15256010
+python manage.py runserver --insecure <--para que funcione los archivos staticos en debug= false
+python manage.py createsuperuser <--crear super usuario
 --------------------------------------------
+
 para makemigrations opciones:
 escribir en linea de comando: timezone.now()
 -------------------------------------------
+
 para ver con ckeditor lo editado:
 When rendering html in templates, make sure you mark it as safe...
 
