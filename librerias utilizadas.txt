@@ -1,5 +1,5 @@
-Pillow <-- para guardar imagen
-django-allauth <-- para registro de usuarios
+pip install Pillow <-- para guardar imagen
+pip install django-allauth <-- para registro de usuarios
 pip install django-crispy-forms <--para formularios
 pip install django-import-export
 pip install django-ckeditor <-- para editor estilo word
